@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="index.php">
             <img src="../assets/img/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top me-2">
-            Fantacalcio 
+            Università
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,13 +27,29 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Piano di studi
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="createLegue.php">Vedi piani di studio</a></li>
-                        <li><a class="dropdown-item" href="viewLegueByUser.php">Modifica piani di studio</a></li>
-                    </ul>
-                </li>
+                        <?php
+                                            include_once dirname(__FILE__) . '/../function/login.php';
+                                            $user = $_SESSION['user_id'];
+                                            $privilage = getAutentication($user);
+                                            if($privilage == "admin"){
+                                                echo('   Piano di studi
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="createLegue.php">Vedi piani di studio</a></li>
+                                                    <li><a class="dropdown-item" href="viewLegueByUser.php">Modifica piani di studio</a></li>
+                                                </ul>
+                                            </li>');
+                                            }
+                                            else{
+                                                echo('   Piano di studi
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="createLegue.php">Vedi piani di studio</a></li>
+                                                </ul>
+                                            </li>');
+                                            }
+                        ?>
+                     
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">

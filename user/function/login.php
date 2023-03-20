@@ -44,4 +44,12 @@ function login($data)
         $res = json_decode($json_data);
         return $res[0]->name; 
     }
+
+    function getAutentication($id){
+        $url = 'http://localhost/medicina2023/medicina-api/api/user/getAutentication.php?id='.$id.'';
+
+        $json_data = file_get_contents($url);
+        $res = json_decode($json_data);
+        return $res[0]->name; 
+}
 ?>

@@ -6,6 +6,7 @@ require __DIR__ . " /../common/errorHandler.php";
 set_exception_handler("errorHandler::handleException");
 set_error_handler("errorHandler::handleError");
 
+$table_name = "`user`";
 class User extends BaseController
 {
     public function getUser($id)
@@ -123,6 +124,18 @@ class User extends BaseController
         $result = $this->conn->query($sql);
         return $result;
     }
+    public function getAutentication($id)
+    {
+        $sql = sprintf(
+            "SELECT name
+            FROM privileges
+            WHERE user = %d;",
+            $this->conn->real_escape_string($id)
+        );
 
+        $result = $this->conn->query($sql);
+
+        $this->SendOutput($result, JSON_OK);
+    }
 }
 ?>
