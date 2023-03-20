@@ -3,7 +3,7 @@
 function login($data)
     {
        // $url = 'http://localhost:8080/Progetto-Panini/food-api/API/user/login.php';
-        $url = 'http://localhost/medicina2023/medici-api/api/user/login.php';
+        $url = 'http://localhost/medicina2023/medicina-api/api/user/login.php';
 
         $curl = curl_init($url);    //inizializza una nuova sessione di cUrl
         //Curl contiene il return del curl_init 
@@ -38,10 +38,10 @@ function login($data)
         }
     }
     function getUser(){
-        $url = 'http://localhost/fantacalcio/fantacalcio-api/api/user/getUser.php?id='.$_SESSION['user_id'];
+        $url = 'http://localhost/medicina2023/medicina-api/api/user/getUser.php?id='.$_SESSION['user_id'];
 
         $json_data = file_get_contents($url);
         $res = json_decode($json_data);
-        return $res[0]->nickname; 
+        return $res[0]->name; 
     }
 ?>
