@@ -46,3 +46,6 @@ add foreign key (didattica) references piano_di_studi(codice);
 
 insert into 	`user` (name, surname, email, password) values ("admin", "admin", "admin@gmail.com", "admin");
 insert into `privileges` (`user` , name) values (1, "admin");
+insert into 	`user` (name, surname, email, password) values ("marco", "malanchin", "malanchinmarco@gmail.com", "123");
+insert into `privileges` (`user` , name) values (2, "user");
+

@@ -27,12 +27,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Leghe
+                        Piano di studi
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="createLegue.php">Crea Lega</a></li>
-                        <li><a class="dropdown-item" href="viewLegueByUser.php">Vedi Leghe</a></li>
-                        <li><a class="dropdown-item" href="partecipateLegue.php">Partecipa Leghe</a></li>
+                        <li><a class="dropdown-item" href="createLegue.php">Vedi piani di studio</a></li>
+                        <li><a class="dropdown-item" href="viewLegueByUser.php">Modifica piani di studio</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
