@@ -35,7 +35,7 @@
                                                 echo('   Piano di studi
                                                 </a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="createLegue.php">Vedi piani di studio</a></li>
+                                                    <li><a class="dropdown-item" href="visualizzaPiano.php">Vedi piani di studio</a></li>
                                                     <li><a class="dropdown-item" href="viewLegueByUser.php">Modifica piani di studio</a></li>
                                                 </ul>
                                             </li>');
