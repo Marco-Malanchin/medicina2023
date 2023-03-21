@@ -74,7 +74,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                echo ('<p class="text-success fw-bold mt-3 ms-3">' . $response['Message'] . '</p>'); 
                    }
                    $id = getLastUserIdFromEmail($_POST['email']);
-                   var_dump($id);
+                   $data2 = array(
+                    "user"  => $id,
+                    "name"  => "user",
+                    );
+                    $response2 =addPrivileges($data2);
            }
         }
 ?>

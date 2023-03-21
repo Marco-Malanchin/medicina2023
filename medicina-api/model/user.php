@@ -141,5 +141,17 @@ class User extends BaseController
 
         $this->SendOutput($result, JSON_OK);
     }
+    public function addPrivileges($user, $name)
+    {
+
+        $sql = sprintf(
+            "INSERT INTO `privileges` ( user, name)
+        VALUES ('%d', '%s')",
+             $this->conn->real_escape_string($user),
+             $this->conn->real_escape_string($name),
+        );
+        $result = $this->conn->query($sql);
+        return $result;
+    }
 }
 ?>
