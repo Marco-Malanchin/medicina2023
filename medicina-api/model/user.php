@@ -110,13 +110,14 @@ class User extends BaseController
 
         return $result;
     }
-    public function registration($nickname, $email, $password)
+    public function addUser($name, $surname,$email,  $password)
     {
 
         $sql = sprintf(
-            "INSERT INTO user ( nickname,email, password)
-        VALUES ('%s', '%s', '%s')",
-             $this->conn->real_escape_string($nickname),
+            "INSERT INTO user ( name, surname, email,  password)
+        VALUES ('%s', '%s', '%s',  '%s')",
+             $this->conn->real_escape_string($name),
+             $this->conn->real_escape_string($surname),
             $this->conn->real_escape_string($email),
             $this->conn->real_escape_string($password)
         );

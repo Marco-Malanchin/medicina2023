@@ -38,7 +38,16 @@
                                                     <li><a class="dropdown-item" href="visualizzaPiano.php">Vedi piani di studio</a></li>
                                                     <li><a class="dropdown-item" href="aggiungiPiano.php">Modifica piani di studio</a></li>
                                                 </ul>
-                                            </li>');
+                                            </li>
+                                            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Utenti
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="addUtenti.php">Aggiungi Utenti</a></li>
+                    </ul>
+                </li>');
                                             }
                                             else{
                                                 echo('   Piano di studi
@@ -49,16 +58,6 @@
                                             </li>');
                                             }
                         ?>
-                     
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Squadre
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="getPlayer.php">Visualizza Squadre</a></li>
-                    </ul>
-                </li>
             </ul>
             <a href="../function/logout.php">
             <button class="btn btn-outline-danger">Esci</button>
