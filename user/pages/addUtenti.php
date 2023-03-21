@@ -73,6 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           if (!empty($response)){
                echo ('<p class="text-success fw-bold mt-3 ms-3">' . $response['Message'] . '</p>'); 
                    }
+                   $id = getLastUserIdFromEmail($_POST['email']);
+                   var_dump($id);
            }
         }
 ?>

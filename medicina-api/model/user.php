@@ -38,8 +38,10 @@ class User extends BaseController
 
         $sql = sprintf(
             "SELECT id
-        FROM `user` 
-        WHERE email = '%s' ",
+            from `user` u
+            where u.email = %s
+            order by u.id desc
+            limit 1; ",
             $this->conn->real_escape_string($email)
         );
 
@@ -48,19 +50,20 @@ class User extends BaseController
         return $result;
     }
 
-    public function getLastUserIdFromNameAndSur($name, $surname)
+    public function getLastUserIdFromEmail($email)
     {
-        $sql = sprintf(
-            "SELECT id
-        FROM `user`
-        ORDER BY id DESC
-        WHERE name = '%s' and surname = '%s'
-        LIMIT 1",
-            $this->conn->real_escape_string($name),
-            $this->conn->real_escape_string($surname)
-        );
-
-        $result = $this->conn->query($sql);
+            $sql = sprintf(
+                "SELECT id
+        from `user` u
+        where u.email = '%s'
+        order by u.id desc
+        limit 1 ",
+                $this->conn->real_escape_string($email)
+            );
+    
+            $result = $this->conn->query($sql);
+    
+            $this->SendOutput($result, JSON_OK);
     }
 
 

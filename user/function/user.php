@@ -27,4 +27,11 @@ function addUser($data)
 
     return $response;
 }
+function getLastUserIdFromEmail($email){
+    $url = 'http://localhost/medicina2023/medicina-api/api/user/getLastUserIdFromEmail.php?email='.$email.'';
+
+    $json_data = file_get_contents($url);
+    $res = json_decode($json_data);
+    return $res[0]->id; 
+}
 ?>
