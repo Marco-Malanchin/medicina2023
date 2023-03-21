@@ -62,4 +62,30 @@ function addPrivileges($data)
 
     return $response;
 }
+
+function getArchiveUser(){
+    $url = 'http://localhost/medicina2023/medicina-api/api/user/getArchiveUser.php';
+
+    $json_data = file_get_contents($url);
+
+    $decode_data = json_decode($json_data, $assoc = true);
+    $off_data = $decode_data;
+    if (!empty($off_data)) {
+        $off_arr = array();
+
+        foreach ($off_data as $off) {
+            $off_record = array(
+                'nome' => $off['name'],
+                'cognome' => $off['surname'],
+                'email' => $off['email'],
+            );
+            array_push($off_arr, $off_record);
+        }
+
+        return $off_arr;
+    }
+    else{
+        return -1; 
+    }
+}
 ?>

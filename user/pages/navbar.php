@@ -46,6 +46,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="addUtenti.php">Aggiungi Utenti</a></li>
+                        <li><a class="dropdown-item" href="visualizzaUtenti.php">Visualizza Utenti</a></li>
                     </ul>
                 </li>');
                                             }

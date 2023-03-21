@@ -24,13 +24,12 @@ class User extends BaseController
     }
 
     public function getArchiveUser(){
-        $sql = "select u.id ,u.name, u.surname, u.email
-                from `user` u
-                where u.active=1;"; 
+        $query = "SELECT u.name, u.surname, u.email
+                from `user` u"; 
         
-        $result = $this->conn->query($sql);
-        
-        $this->SendOutput($result, JSON_OK);
+        $stmt = $this->conn->query($query);
+    
+        return $stmt;
     }
 
     protected function getUserFromEmail($email)
