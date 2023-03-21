@@ -6,7 +6,7 @@
     header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
     include_once dirname(__FILE__) . '/../../common/connect.php';
-    include_once dirname(__FILE__) . '/../../model/piano.php';
+    include_once dirname(__FILE__) . '/../../model/pianoStudi.php';
 
     $database = new Database();
     $db = $database->connect();
@@ -20,7 +20,7 @@
 
     $piano = new Piano($db);
     
-    if($piano->addPiano($data->codice, $data->nome, $data->cfu, $data->settore, $data->n_settore, $data->taf_ambito, $data->ore_lezione, $data->ore_laboratorio, $data->ore_tirocinio, $data->tipo_insegnamento, $data->semestre, $data->descrizione_semestre, $data->anno1, $data->anno2,) > 0)
+    if($piano->addPiano($data->codice, $data->nome, $data->cfu) > 0)
     {
         http_response_code(201);
         echo json_encode(array("Message"=> "Created"));

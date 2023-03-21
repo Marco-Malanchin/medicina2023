@@ -37,7 +37,7 @@ function getArchivePiano(){
 }
 function addPiano($data)
 {
-    $url = 'http://localhost/medicina2023/fantacalcio-api/api/legue/addLegue.php';
+    $url = 'http://localhost/medicina2023/medicina-api/api/Piano/addPiano.php';
 
     $curl = curl_init($url); //inizializza una nuova sessione di cUrl
     //Curl contiene il return del curl_init 

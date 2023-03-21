@@ -38,69 +38,31 @@ if(empty($_SESSION['user_id'])){
             <th scope="row"></th>
             <form method="post">
               <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
+                <input class="form-control" type="" id="codice" placeholder="codice" name="codice"
                   maxlength="50" required>
               </td>
               <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
+                <input class="form-control" type="" id="nome" placeholder="nome" name="nome"
                   maxlength="50" required>
               </td>
               <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
-                  maxlength="50" required>
-              </td>
-              <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
-                  maxlength="50" required>
-              </td>
-              <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
-                  maxlength="50" required>
-              </td>
-              <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
-                  maxlength="50" required>
-              </td>
-              <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
-                  maxlength="50" required>
-              </td>
-              <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
-                  maxlength="50" required>
-              </td>
-              <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
-                  maxlength="50" required>
-              </td>
-              <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
-                  maxlength="50" required>
-              </td>
-              <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
-                  maxlength="50" required>
-              </td>
-              <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
-                  maxlength="50" required>
-              </td>
-              <td>
-                <input class="form-control" type="" id="name" placeholder="Nome nuova lega" name="name"
+                <input class="form-control" type="" id="cfu" placeholder="cfu" name="cfu"
                   maxlength="50" required>
               </td>
               <td>
                 <button type="submit" class="btn btn-success" name="legha">Conferma</button>
 </td>
+</tr>
             <?php
 
 include_once dirname(__FILE__) . '\..\function\piano.php';
 $err = "";
-$id_creator = $_SESSION['user_id'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (!empty($_POST['name'])) {
+    if (!empty($_POST['codice'])|| !empty($_POST['nome'])||!empty($_POST['cfu'])) {
       $data = array(
-        "name"  => $_POST ['name'],
-        "id_creator" =>$id_creator,
+        "codice"  => $_POST ['codice'],
+        "nome"  => $_POST ['nome'],
+        "cfu"  => $_POST ['cfu'],
         );
           $response =(array) addPiano($data);
           if (!empty($response)){
